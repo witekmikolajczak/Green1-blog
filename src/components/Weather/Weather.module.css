@@ -1,17 +1,53 @@
-.input {
-  padding-top: 20%;
+.weather {
+  padding-top: 1rem;
   text-align: center;
 }
 
-.input label {
+.weather label {
   display: block;
   padding-bottom: 1rem;
+  padding-top: 2rem;
+  color: white;
 }
 
-.input input {
+.weather input {
+  text-align: center;
   border-radius: 10px;
   font: inherit;
+  height: 3rem;
 }
 
 .result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: aliceblue;
+  height: 50%;
+}
+
+.result h2 {
+  margin: 0.5rem;
+}
+
+.cold {
+  background-image: linear-gradient(
+      rgba(20, 20, 20, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../../assets/cold.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.warm {
+  background-image: linear-gradient(
+      rgba(20, 20, 20, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../../assets/warm.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }

@@ -1,12 +1,13 @@
 import React from "react";
 
 import Weather from "./components/Weather/Weather.js";
+import classes from "./App.module.css";
 
 function App() {
   return (
-    <React.Fragment>
+    <div className={classes.app}>
       <Weather />
-    </React.Fragment>
+    </div>
   );
 }
 

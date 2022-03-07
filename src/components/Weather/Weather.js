@@ -1,19 +1,16 @@
 import React, { useState } from "react";
+
 import Card from "../UI/Card";
 import classes from "./Weather.module.css";
+import { base_url } from "../api/url";
 
-const Weather = (props) => {
+const Weather = () => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState([]);
 
-  const api = {
-    key: "cf7c660938beef44011efd6e5378e6d8",
-    url: `http://api.openweathermap.org/data/2.5/`,
-  };
-
   const search = (evt) => {
     if (evt.key === "Enter") {
-      fetch(`${api.url}weather?q=${city}&units=metric&APPID=${api.key}`)
+      fetch(`${base_url}&q=${city}`)
         .then((response) => response.json())
         .then((result) => {
           setWeather(result);
@@ -24,9 +21,19 @@ const Weather = (props) => {
   };
 
   return (
-    <Card className={classes.input}>
-      <div>
-        <label htmlFor="city">Search weather</label>
+    <Card
+      className={
+        typeof weather.main != "undefined"
+          ? weather.main.temp > 15
+            ? classes.warm
+            : classes.cold
+          : classes.card
+      }
+    >
+      <div className={classes.weather}>
+        <label htmlFor="city">
+          <b>Search weather</b>
+        </label>
         <input
           type="text"
           id="city"
@@ -38,10 +45,11 @@ const Weather = (props) => {
       </div>
       {typeof weather.main != "undefined" ? (
         <div className={classes.result}>
-          <ul>
-            {weather.name}
-            {weather.main.temp}
-          </ul>
+          <p>
+            City: {weather.name} {weather.sys.country}
+          </p>
+          <h2>{weather.main.temp} °C</h2>
+          {/* <h2>Humidity: {weather.main.humidity} %</h2> */}
         </div>
       ) : (
         ""
