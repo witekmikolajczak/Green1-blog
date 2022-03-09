@@ -1,0 +1,17 @@
+.forecast {
+  display: block;
+  border: 2px solid black;
+  animation: 1s slide-right;
+}
+.forecast-hide {
+  display: none;
+}
+
+@keyframes slide-right {
+  from {
+    margin-left: -50%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
