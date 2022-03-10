@@ -4,14 +4,16 @@ import Card from "../UI/Card";
 import classes from "./Forecast.module.css";
 
 const Forecast = (props) => {
-  const buttonHandler = props.buttonEvent;
-  console.log(props.passData);
+  const data = props.passForecast;
+  data.map((day) => {
+    console.log(day);
+  });
   return (
-    <Card
-      className={buttonHandler ? classes.forecast : classes["forecast-hide"]}
-    >
-      <div></div>
-    </Card>
+    <div className={props.className}>
+      <Card>
+        <div>Monday: </div>
+      </Card>
+    </div>
   );
 };
 

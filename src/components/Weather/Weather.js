@@ -6,15 +6,11 @@ import { base_url } from "../api/url";
 
 // custom hooks
 import useForecast from "../hooks/useForecast";
-import Forecast from "./Forecast";
 
 const Weather = (props) => {
   const [city, setCity] = useState("");
-  const [weather, setWeather] = useState([]);
+  const [weather, setWeather] = useState(false);
   const [showForecast, setShowForecast] = useState(false);
-
-  // pass data from useForecast.js via props to Forecast component
-  const [item, setItems] = useState();
 
   //connect to useForecast.js
   const { isError, isLoading, forecast, submitRequest } = useForecast();
@@ -27,7 +23,6 @@ const Weather = (props) => {
           setWeather(result);
           setCity("");
           submitRequest(city);
-          setItems(forecast);
         });
     }
   };
@@ -36,6 +31,7 @@ const Weather = (props) => {
   const buttonHandler = () => {
     setShowForecast(true);
     props.onButtonClick(showForecast);
+    props.onForecast(forecast);
   };
 
   return (
@@ -60,9 +56,11 @@ const Weather = (props) => {
           value={city}
           onKeyPress={search}
         />
-        <button id="btn" onClick={buttonHandler}>
-          Forecast
-        </button>
+        {weather != false && (
+          <button id="btn" onClick={buttonHandler}>
+            Forecast
+          </button>
+        )}
       </div>
       {typeof weather.main != "undefined" ? (
         <div className={classes.result}>
@@ -75,7 +73,7 @@ const Weather = (props) => {
         ""
       )}
       {/* pass data from state to Forecast component */}
-      <div>{forecast && <Forecast passData={item} />}</div>
+      {/* <div>{forecast && <Forecast />}</div> */}
     </Card>
   );
 };
