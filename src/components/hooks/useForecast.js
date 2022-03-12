@@ -9,6 +9,7 @@ const useForecast = (props) => {
   const [forecast, setForecast] = useState(null);
 
   const gatherForecastData = (data) => {
+    console.log(data);
     const upcomingDays = getUpcomingDaysForecast(data);
     setForecast({ upcomingDays });
   };
