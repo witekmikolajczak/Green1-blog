@@ -56,11 +56,11 @@ const Weather = (props) => {
           value={city}
           onKeyPress={search}
         />
-        {/* {weather != false && (
+        {weather != false && (
           <button id="btn" onClick={buttonHandler}>
             Forecast
           </button>
-        )} */}
+        )}
       </div>
       {typeof weather.main != "undefined" ? (
         <div className={classes.result}>

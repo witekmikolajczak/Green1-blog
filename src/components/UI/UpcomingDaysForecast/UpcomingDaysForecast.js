@@ -8,7 +8,6 @@ const UpcomingDaysForecast = (props) => {
         {
           console.log(day);
         }
-        <UpcomingDaysForecastItem {...day} key={day.name} />;
       })}
     </ul>
   );

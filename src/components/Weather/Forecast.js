@@ -17,14 +17,14 @@ const Forecast = (props) => {
     <div className={props.className}>
       <Card>
         <div>
-          {/* Monday:
-          {data.slice(1).map((day) => (
-            <li key={day.id}>{day.temp}</li>
-          ))}{" "} */}
-          {/* {day.map((day) => (
-            <li key={day.id}>{day.weekDay}</li>
-          ))} */}
-          <UpcomingDaysForecast days={data} temp="19*" />
+          {data.map((day) => {
+            switch (day.name) {
+              case "Wednesday":
+                let max = [];
+
+                console.log("max: " + Math.max(day.temp));
+            }
+          })}
         </div>
       </Card>
     </div>
