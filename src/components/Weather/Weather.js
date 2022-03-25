@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
 import Card from "../UI/Card";
+import Forecast from "./Forecast";
 import classes from "./Weather.module.css";
-import { base_url } from "../api/url";
+import { base_url, onecall_url } from "../api/url";
 
 // custom hooks
 import useForecast from "../hooks/useForecast";
@@ -30,8 +31,7 @@ const Weather = (props) => {
   // handle button click to show forecast div
   const buttonHandler = () => {
     setShowForecast(true);
-    props.onButtonClick(showForecast);
-    props.onForecast(forecast);
+    props.onButtonClick(showForecast); //show forecast div
   };
 
   return (
@@ -73,7 +73,7 @@ const Weather = (props) => {
         ""
       )}
       {/* pass data from state to Forecast component */}
-      {/* <div>{forecast && <Forecast />}</div> */}
+      <div>{forecast && <Forecast />}</div>
     </Card>
   );
 };

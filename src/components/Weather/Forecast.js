@@ -5,28 +5,9 @@ import UpcomingDaysForecast from "../UI/UpcomingDaysForecast/UpcomingDaysForecas
 import classes from "./Forecast.module.css";
 
 const Forecast = (props) => {
-  const data = props.passForecast.upcomingDays;
-
-  // const day = data.map((day) => ({
-  //   id: Math.random(),
-  //   weekDay: day.name,
-  //   dayTemp: day.temp,
-  // }));
-  console.log(data);
   return (
     <div className={props.className}>
-      <Card>
-        <div>
-          {data.map((day) => {
-            switch (day.name) {
-              case "Wednesday":
-                let max = [];
-
-                console.log("max: " + Math.max(day.temp));
-            }
-          })}
-        </div>
-      </Card>
+      <Card></Card>
     </div>
   );
 };

@@ -14,10 +14,11 @@ function App() {
 
   const forecastHandler = (data) => {
     setForecast(data);
+    console.log(data);
   };
   return (
     <div className={classes.app}>
-      <Weather onButtonClick={buttonClick} onForecast={forecastHandler} />
+      <Weather onButtonClick={buttonClick} />
       {buttonEvent && (
         <Forecast className={classes.forecast} passForecast={forecast} />
       )}
