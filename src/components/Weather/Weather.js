@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Card from "../UI/Card";
 import Forecast from "./Forecast";
 import classes from "./Weather.module.css";
-import { base_url, onecall_url } from "../api/url";
+import { base_url, onecall_url, CROSS_DOMAIN } from "../api/url";
 
 // custom hooks
 import useForecast from "../hooks/useForecast";
@@ -18,7 +18,7 @@ const Weather = (props) => {
 
   const search = (evt) => {
     if (evt.key === "Enter") {
-      fetch(`${base_url}&q=${city}`)
+      fetch(`${CROSS_DOMAIN}/${base_url}&q=${city}`)
         .then((response) => response.json())
         .then((result) => {
           setWeather(result);
