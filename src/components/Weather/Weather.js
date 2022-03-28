@@ -18,7 +18,7 @@ const Weather = (props) => {
 
   const search = (evt) => {
     if (evt.key === "Enter") {
-      fetch(`${CROSS_DOMAIN}/${base_url}&q=${city}`)
+      fetch(`${base_url}&q=${city}`)
         .then((response) => response.json())
         .then((result) => {
           setWeather(result);
