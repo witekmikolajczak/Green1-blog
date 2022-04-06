@@ -1,0 +1,19 @@
+.app {
+  height: 100vh;
+
+  .wrapper {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .forecast {
+    width: 100%;
+    position: relative;
+    top: 70px;
+
+    > * {
+      width: 100vw;
+    }
+  }
+}
