@@ -18,7 +18,7 @@ export const Forecast = ({ forecastWeather }) => {
       icon: data.condition.icon,
       icon_text: data.condition.text,
       temp: data.temp_c + "°C",
-      time: moment(data.time).format("hh:mm:ss"),
+      time: moment(data.time).format("HH:mm "),
       humidity: data.humidity,
     })),
   }));
