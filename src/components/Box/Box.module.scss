@@ -1,6 +1,6 @@
 .box {
-  border: 2px solid white;
-  border-radius: 10px;
+  border: 1px solid white;
+  border-radius: 20% 40% 20% 40%;
   width: 500px;
   height: 500px;
 
@@ -18,7 +18,7 @@
         height: 50px;
         width: 300px;
         background-color: transparent;
-        border: 2px solid white;
+        border: 1px solid white;
         border-radius: 10px;
         text-align: center;
 
@@ -28,10 +28,18 @@
       button {
         margin-top: 30px;
         background-color: transparent;
-        border: 2px solid black;
+        border: 2px solid white;
         border-radius: 10px;
         height: 50px;
         width: 200px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          width: 100%;
+          transition: all 1s ease;
+        }
       }
     }
   }

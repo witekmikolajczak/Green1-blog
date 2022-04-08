@@ -17,14 +17,24 @@ export const Card = ({ key_id, weather, onClick, ...props }) => {
         />
       )}
       <div className={styles.day} onClick={() => setModal(true)}>
-        <h1>{weather.day_name}</h1>
+        <div className={styles.center}>
+          <h1>{weather.day_name}</h1>
+          <img src={weather.icon} alt="weather icon" />
+          <p>{weather.icon_text}</p>
+        </div>
 
-        <img src={weather.icon} alt="weather icon" />
-        <p>{weather.icon_text}</p>
-        <p>Temp avg: {weather.temp_avg}</p>
-        <p>Temp max: {weather.temp_max}</p>
-        <p>Temp min: {weather.temp_min}</p>
-        <p>Humidity {weather.humidity_avg}</p>
+        <p>
+          <a>Temp avg:</a> {weather.temp_avg}
+        </p>
+        <p>
+          <a>Temp max:</a> {weather.temp_max}
+        </p>
+        <p>
+          <a>Temp min:</a> {weather.temp_min}
+        </p>
+        <p>
+          <a>Humidity</a> {weather.humidity_avg}%
+        </p>
       </div>
     </div>
   );
