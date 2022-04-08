@@ -10,14 +10,20 @@ export const Box = (props) => {
   const search = async (evt) => {
     evt.preventDefault();
     const enteredCity = city.current.value;
-    await fetch(`${base_url}&q=${enteredCity}&days=3`)
-      .then((response) => response.json())
-      .then((result) => {
-        setForecast(result.forecast);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (enteredCity !== "") {
+      console.log("searching");
+      await fetch(`${base_url}&q=${enteredCity}&days=3`)
+        .then((response) => response.json())
+        .then((result) => {
+          setForecast(result.forecast);
+          console.log(forecast);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      alert("Enter valid location");
+    }
 
     props.forecastWeather(forecast);
   };

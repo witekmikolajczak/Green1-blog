@@ -5,11 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("../public/assets/weather-background.jpg");
+  background-image: url("../public/assets/sunset.png");
   background-size: cover;
   background-repeat: no-repeat;
   overflow-x: hidden;
-  height: 120vh;
+  height: 150vh;
 }
 
 code {
